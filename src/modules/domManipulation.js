@@ -1,6 +1,5 @@
 import scoreBoard from './scoreBoard.js';
-
-const form = document.getElementById('Add-score-form');
+import displayScore from './displayScore.js'
 const nameInput = document.getElementById('name');
 const scoreInput = document.getElementById('score');
 
@@ -13,17 +12,14 @@ const startGame = () => {
 		[id] = [res[3]];
 	})
 }
-
 const AddScore = (e) => {
   game.postScore(id, nameInput.value, scoreInput.value);
+	nameInput.value = '';
+	scoreInput.value = '';
   e.preventDefault();
 };
+const getScores = () => {
+  game.getScores(id).then((response) => displayScore(response.result));
+};
 
-
-// event listeners
-document.addEventListener('DOMContentLoaded', startGame);
-const dom = () =>{
-	form.addEventListener('submit', AddScore);
-}
-
-export default dom;
+export {startGame,AddScore,getScores};

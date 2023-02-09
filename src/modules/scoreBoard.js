@@ -16,16 +16,12 @@ class scoreBoard{
 		const game = await response.json();
 		return game;
   }
-  getScore = async (id) => {
-		const response = await fetch(`${this.url}/${id}/scores/`);
-		const game = await response.json();
-		return game;
-	}
+
 	postScore = async (id,name, score) => {
     if (name === '' || score === '') {
       alert('Please enter valid value');
     }
-		const response = await fetch(`${this.url}/${id}/scores/`, {
+		const response = await fetch(`${this.url}${id}/scores/`, {
 			method: 'POST',
 			body: JSON.stringify({
 				user: name,
@@ -35,8 +31,13 @@ class scoreBoard{
 				'Content-type': 'application/json; charset=UTF-8',
 			},
 		})
-		const game = await response.json()
+		const game = await response.json();
     return game;
+	}
+	getScores = async (id) => {
+		const response = await fetch(`${this.url}${id}/scores/`);
+		const game = await response.json();
+		return game;
 	}
 }
 
