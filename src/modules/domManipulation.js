@@ -12,14 +12,14 @@ const startGame = () => {
 		[id] = [res[3]];
 	})
 }
+const getScores = () => {
+  game.getScores(id).then((response) => displayScore(response.result));
+};
 const AddScore = (e) => {
   game.postScore(id, nameInput.value, scoreInput.value);
 	nameInput.value = '';
 	scoreInput.value = '';
   e.preventDefault();
-};
-const getScores = () => {
-  game.getScores(id).then((response) => displayScore(response.result));
 };
 
 export {startGame,AddScore,getScores};

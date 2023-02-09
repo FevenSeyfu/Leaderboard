@@ -16,7 +16,11 @@ class scoreBoard{
 		const game = await response.json();
 		return game;
   }
-
+  getScores = async (id) => {
+		const response = await fetch(`${this.url}${id}/scores/`);
+		const game = await response.json();
+		return game;
+	}
 	postScore = async (id,name, score) => {
     if (name === '' || score === '') {
       alert('Please enter valid value');
@@ -33,11 +37,6 @@ class scoreBoard{
 		})
 		const game = await response.json();
     return game;
-	}
-	getScores = async (id) => {
-		const response = await fetch(`${this.url}${id}/scores/`);
-		const game = await response.json();
-		return game;
 	}
 }
 

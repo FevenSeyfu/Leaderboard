@@ -1,11 +1,10 @@
 const scoreTable = document.getElementById('leader-list');
 
 const displayScore = (ScoreList) => {
+	scoreTable.innerHTML = ' ';
   ScoreList.forEach((score) => {
-    const newRow = document.createElement('tr');
-    newRow.innerHTML = `
+    scoreTable.innerHTML += `
       <td>${score.user} : ${score.score}</td>`;
-    scoreTable.appendChild(newRow);
   });
 };
 
