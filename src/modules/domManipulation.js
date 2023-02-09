@@ -9,10 +9,10 @@ const game = new scoreBoard();
 let id;
 const startGame = () => {
   game.createGame('TicTacToe')
-  .then((response) => response.result.split(' '))
-  .then ((res) => {
-    [id] = [res[3]];
-  })
+      .then((response) => response.result.split(' '))
+      .then((res) => {
+      [id] = [res[3]];
+  });
 };
 const getScores = () => {
   game.getScores(id).then((response) => displayScore(response.result));
