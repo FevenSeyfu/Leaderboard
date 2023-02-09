@@ -1,4 +1,4 @@
-class scoreBoard {
+class ScoreBoard {
   constructor() {
     this.url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
   }
@@ -6,40 +6,41 @@ class scoreBoard {
   createGame = async (gameName) => {
     const response = await fetch(this.url, {
       method: 'POST',
-      body: JSON.stringify( {
+      body: JSON.stringify({
         name: gameName,
-			}),
+      }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
-		  },
+      },
     });
-		const game = await response.json();
-		return game;
+    const game = await response.json();
+    return game;
   }
 
   getScores = async (id) => {
     const response = await fetch(`${this.url}${id}/scores/`);
     const game = await response.json();
     return game;
-	}
+  }
 
-	postScore = async (id,name, score) => {
-    if (name === '' || score === '') {
+  postScore = async (id, name, scored) => {
+    if (name === '' || scored === '') {
+      // eslint-disable-next-line no-alert
       alert('Please enter valid value');
     }
-		const response = await fetch(`${this.url}${id}/scores/`, {
-			method: 'POST',
-			body: JSON.stringify({
-				user: name,
-				score: score,
-			}),
-			headers: {
-				'Content-type': 'application/json; charset=UTF-8',
-			},
-		})
-		const game = await response.json();
+    const response = await fetch(`${this.url}${id}/scores/`, {
+      method: 'POST',
+      body: JSON.stringify({
+        user: name,
+        score: scored,
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    });
+    const game = await response.json();
     return game;
-	}
+  }
 }
 
-export default scoreBoard;
+export default ScoreBoard;
