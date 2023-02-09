@@ -1,6 +1,6 @@
 // import _ from 'lodash';
 import './assets/style.css';
-import {startGame,AddScore,getScores} from './modules/domManipulation.js';
+import { startGame, AddScore, getScores } from './modules/domManipulation.js';
 
 // event listeners
 const form = document.getElementById('Add-score-form');

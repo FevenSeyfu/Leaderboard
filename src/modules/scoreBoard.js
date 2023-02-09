@@ -1,12 +1,11 @@
-class scoreBoard{
-	constructor(){
-		this.url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
+class scoreBoard {
+  constructor(){
+    this.url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
 	}
-
-	createGame = async (gameName) => {
+  createGame = async (gameName) => {
 		const response =  await fetch(this.url, {
 			method: 'POST',
-			body: JSON.stringify({
+			body: JSON.stringify( {
 				name: gameName,
 			}),
 			headers: {

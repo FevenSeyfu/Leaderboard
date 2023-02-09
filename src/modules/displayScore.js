@@ -1,10 +1,10 @@
 const scoreTable = document.getElementById('leader-list');
 
 const displayScore = (ScoreList) => {
-	scoreTable.innerHTML = ' ';
+  scoreTable.innerHTML = ' ';
   ScoreList.forEach((score) => {
     scoreTable.innerHTML += `
-      <td>${score.user} : ${score.score}</td>`;
+    <td>${score.user} : ${score.score}</td>`;
   });
 };
 
