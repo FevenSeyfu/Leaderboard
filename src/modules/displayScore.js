@@ -1,11 +1,10 @@
-import ScoreList from './createList.js';
+const scoreTable = document.getElementById('leader-list');
 
-const displayScore = (scoreTable) => {
+const displayScore = (ScoreList) => {
+  scoreTable.innerHTML = ' ';
   ScoreList.forEach((score) => {
-    const newRow = document.createElement('tr');
-    newRow.innerHTML = `
-      <td>${score.name} : ${score.score}</td>`;
-    scoreTable.appendChild(newRow);
+    scoreTable.innerHTML += `
+    <td>${score.user} : ${score.score}</td>`;
   });
 };
 

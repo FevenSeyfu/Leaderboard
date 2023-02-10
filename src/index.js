@@ -1,9 +1,11 @@
 // import _ from 'lodash';
 import './assets/style.css';
+import { startGame, AddScore, getScores } from './modules/domManipulation.js';
 
-import displayScore from './modules/displayScore.js';
+// event listeners
+const form = document.getElementById('Add-score-form');
+const refresh = document.getElementById('refresh-btn');
 
-const scoreTable = document.getElementById('leader-list');
-window.onload = () => {
-  displayScore(scoreTable);
-};
+document.addEventListener('DOMContentLoaded', startGame);
+form.addEventListener('submit', AddScore);
+refresh.addEventListener('click', getScores);
