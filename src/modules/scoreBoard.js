@@ -24,10 +24,6 @@ class ScoreBoard {
   }
 
   postScore = async (id, name, scored) => {
-    if (name === '' || scored === '') {
-      // eslint-disable-next-line no-alert
-      alert('Please enter valid value');
-    }
     const response = await fetch(`${this.url}${id}/scores/`, {
       method: 'POST',
       body: JSON.stringify({

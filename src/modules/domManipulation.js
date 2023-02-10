@@ -17,10 +17,14 @@ const startGame = () => {
 const getScores = () => {
   Game.getScores(id).then((response) => displayScore(response.result));
 };
-const AddScore = (e) => {
-  Game.postScore(id, nameInput.value, scoreInput.value);
+const clearField = () => {
   nameInput.value = '';
   scoreInput.value = '';
+};
+
+const AddScore = (e) => {
+  Game.postScore(id, nameInput.value, scoreInput.value);
+  clearField();
   e.preventDefault();
 };
 
