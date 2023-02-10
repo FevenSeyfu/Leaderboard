@@ -5,10 +5,12 @@
 }
 
 header {
-  padding: 1rem 0.5rem;
+  padding: 1rem 0;
   font-size: 1.5rem;
   font-family: sans-serif;
   font-weight: bold;
+  margin: 0 auto;
+  border-bottom: 4px solid;
 }
 
 .main-body {
@@ -16,11 +18,20 @@ header {
   flex-direction: row;
   margin: 1rem auto;
   justify-content: space-evenly;
-  padding: 0 15%;
+  padding: 0 10%;
+  gap: 9rem;
+  margin-top: 1rem;
+}
+
+.container {
+  width: 75%;
+  margin: 2rem auto;
+  padding: 1rem 2rem 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
 
 .col-l {
-  width: 18rem;
+  width: 50%;
 }
 
 .row-top {
@@ -40,13 +51,17 @@ button {
   font-size: 0.8rem;
   font-weight: 700;
   border: 2px solid;
-  padding: 0.2rem;
+  padding: 0.5rem;
+  background-color: #0275f8;
+  color: #fff;
+  border-radius: 0.5rem;
 }
 
 table {
   width: 100%;
   border: 2px solid;
   margin-top: 1rem;
+  border-radius: 0.5rem;
 }
 
 tr:nth-child(odd) {
@@ -79,14 +94,27 @@ td {
 
 input {
   margin-bottom: 0.8rem;
-  height: 1.5rem;
+  height: 2rem;
   width: 12rem;
   border: 2px solid;
   font-size: 0.8rem;
   font-weight: 700;
   padding-left: 0.3rem;
+  border-radius: 0.5rem;
 }
 
 .submit-btn {
   align-self: flex-end;
+}
+
+/* style message box */
+.messagebox {
+  padding: 8px;
+  width: 75%;
+  font-size: 20px;
+  margin: 1rem auto 0.5rem;
+  border-radius: 5px;
+  background-color: #7dc67d;
+  color: white;
+  font-weight: 400;
 }

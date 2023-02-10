@@ -2,6 +2,8 @@ import ScoreBoard from './scoreBoard.js';
 
 import displayScore from './displayScore.js';
 
+import { success, hide } from './message.js';
+
 const nameInput = document.getElementById('name');
 const scoreInput = document.getElementById('score');
 
@@ -25,6 +27,8 @@ const clearField = () => {
 const AddScore = (e) => {
   Game.postScore(id, nameInput.value, scoreInput.value);
   clearField();
+  success();
+  setTimeout(hide, 3000);
   e.preventDefault();
 };
 
