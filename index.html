@@ -16,18 +16,18 @@
 			<section class="col col-l">
 				<div class="row-top">
 					<h2 class="sub-header">Recent scores</h2>
-					<button class="refresh-btn" id="refresh-btn" type="button">Refresh</button>
+					<button class="refresh-btn" type="button">Refresh</button>
 				</div>
-				<table><tbody id="leader-list"></tbody></table>
+				<table id="leader-list"></table>
 			</section>
 			<section class="col col-r">
 				<h2 class="sub-header score">Add your score</h2>
 				<form action="" class="submit-form" id="Add-score-form">
 				  <label for="name">
-						<input type="text" class="name-input" placeholder="Your name" name="name" required id="name">
+						<input type="text" class="name-input" placeholder="Your name" name="name" id="name">
 					</label>
 					<label for="score">
-						<input type="number" min="0" max="100" class="score-input" placeholder="Your score" name="score" id="score" required>
+						<input type="text" class="score-input" placeholder="Your score" name="score" id="score">
 					</label>
 					<button class="submit-btn" type="submit">Submit</button>
 				</form>
