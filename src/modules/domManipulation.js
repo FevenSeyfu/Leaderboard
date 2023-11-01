@@ -26,6 +26,7 @@ const clearField = () => {
 
 const AddScore = (e) => {
   Game.postScore(id, nameInput.value, scoreInput.value);
+  getScores();
   clearField();
   success();
   setTimeout(hide, 3000);
